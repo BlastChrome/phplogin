@@ -5,6 +5,11 @@
 <main class="container">
     <!-- top section -->
     <div class="container top-section">
+        <?php
+        if (isset($_SESSION['useruid'])) {
+            echo "<h2>Welcome " . $_SESSION['useruid'] . "</h2>";
+        }
+        ?>
         <h1>This Is An Introduction</h1>
         <p>This project is just me testing out a login system</p>
     </div>

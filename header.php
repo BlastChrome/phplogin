@@ -37,12 +37,11 @@ session_start();
                     <?php
                     if (isset($_SESSION['useruid'])) {
                         echo "<li class='nav-item'><a class='nav-link' href='./profile.php'>Profile</a></li>
-                        <li class='nav-item'><a class='nav-link' href='./logout.php'>Log out</a></li>";
+                        <li class='nav-item'><a class='nav-link' href='./includes/logout.inc.php'>Log out</a></li>";
                     } else {
                         echo "<li class='nav-item'><a class='nav-link' href='./signup.php'>Sign Up</a></li>
                         <li class='nav-item'><a class='nav-link' href='./login.php'>Login</a></li>";
                     }
-
                     ?>
                 </ul>
             </div>
