@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +24,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -30,12 +34,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Find Blogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./signup.php">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Login</a>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['useruid'])) {
+                        echo "<li class='nav-item'><a class='nav-link' href='./profile.php'>Profile</a></li>
+                        <li class='nav-item'><a class='nav-link' href='./logout.php'>Log out</a></li>";
+                    } else {
+                        echo "<li class='nav-item'><a class='nav-link' href='./signup.php'>Sign Up</a></li>
+                        <li class='nav-item'><a class='nav-link' href='./login.php'>Login</a></li>";
+                    }
+
+                    ?>
                 </ul>
             </div>
         </div>

@@ -7,8 +7,8 @@
         <div class="myform">
             <h1>Login</h1>
             <div class="form-group">
-                <label for="email">User Info</label>
-                <input type="email" class="form-control" name="email" placeholder="Username/Email">
+                <label for="uid">User Info</label>
+                <input type="text" class="form-control" name="uid" placeholder="Username/Email">
             </div>
             <div class="form-group">
                 <label for="pwd">Password</label>
@@ -16,8 +16,17 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" name="submit" class="btn btn-primary">Login</button>
             </div>
+            <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<p class='danger'>Fill in all fields</p>";
+                } else if ($_GET["error"] == "wronglogin") {
+                    echo "<p class='danger'>incorrect login info</p>";
+                }
+            }
+            ?>
         </div>
     </div>
 </form>
